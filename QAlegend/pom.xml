@@ -28,9 +28,10 @@
 <dependency>
     <groupId>org.testng</groupId>
     <artifactId>testng</artifactId>
-    <version>7.11.0</version>
+    <version>7.9.0</version> <!-- or latest stable -->
     <scope>test</scope>
 </dependency>
+
 <dependency>
 			<groupId>com.github.javafaker</groupId>
 			<artifactId>javafaker</artifactId>

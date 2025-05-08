@@ -26,7 +26,7 @@ import automationcore.BaseClass;
 import constants.Constant;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
-import utilities.RetryAnalyzer;
+//import utilities.RetryAnalyzer;
 
 public class QaLegendTeamMemberTest extends BaseClass {
 	WebDriver driver;

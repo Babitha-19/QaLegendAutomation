@@ -8,6 +8,8 @@ import org.openqa.selenium.support.PageFactory;
 import utilities.PageUtilities;
 
 public class QaLegendHomePage {
+	
+	
 WebDriver driver;
 @FindBy(xpath = "//span[text()='Team members']")  //xpath of the teammember menu
 WebElement teammemberoption;   

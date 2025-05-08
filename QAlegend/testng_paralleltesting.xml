@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<suite name="Suite">
+<listeners>
+<listener class-name="testcases.Listners"></listener>
+</listeners>
+<test thread-count="5" name="Test1">
+<parameter name="browsername" value="chrome"></parameter>   
+<classes>
+	<class name="testcases.QaLegendTeamMemberTest">    
+	<methods>
+			<include name="addNewNote"></include>
+			<include name="deleteTeamMember"></include>
+			<include name="addItems"></include>
+			<include name="addTeamMember"></include>
+			<include name="deleteItem"></include>
+     </methods>
+     </class>  
+	 
+	 <class name="testcases.QaLegendTicketTest"> 
+	  <methods>
+			<include name="addTicket"></include>
+			<include name="deleteTicket"></include>
+			<include name="editTicket"></include>
+	  </methods>
+	  </class>
+     
+</classes>
+</test> <!-- Test -->
+<test thread-count="5" name="Test2">
+<parameter name="browsername" value="edge"></parameter>   
+<classes>
+	<class name="testcases.QaLegendTeamMemberTest">    
+	<methods>
+			<include name="addNewNote"></include>
+			<include name="deleteTeamMember"></include>
+			<include name="addItems"></include>
+			<include name="addTeamMember"></include>
+			<include name="deleteItem"></include>
+     </methods>
+     </class>  
+	 
+	 <class name="testcases.QaLegendTicketTest"> 
+	  <methods>
+			<include name="addTicket"></include>
+			<include name="deleteTicket"></include>
+			<include name="editTicket"></include>
+	  </methods>
+	  </class>
+     
+</classes>
+</test>
+<test thread-count="5" name="Test3">
+<parameter name="browsername" value="firefox"></parameter>   
+<classes>
+	<class name="testcases.QaLegendTeamMemberTest">    
+	<methods>
+			<include name="addNewNote"></include>
+			<include name="deleteTeamMember"></include>
+			<include name="addItems"></include>
+			<include name="addTeamMember"></include>
+			<include name="deleteItem"></include>
+     </methods>
+     </class>  
+	 
+	 <class name="testcases.QaLegendTicketTest"> 
+	  <methods>
+			<include name="addTicket"></include>
+			<include name="deleteTicket"></include>
+			<include name="editTicket"></include>
+	  </methods>
+	  </class>
+     
+</classes>
+</test>
+
+
+</suite> <!-- Suite -->

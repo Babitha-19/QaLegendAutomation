@@ -23,11 +23,11 @@ public class QaLegendLoginPage {
 	}
 	
 	
-	public void loginInToQaLegend(String username, String password) {
+	public QaLegendLoginPage loginInToQaLegend(String username, String password) {
 		usernamefield.sendKeys(username);
 		passwordfield.sendKeys(password);
 		signinbutton.click();
-		return; //chaining of pages
+		return this; //chaining of pages
 		
 		
 		

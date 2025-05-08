@@ -97,13 +97,13 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnNotesMenu();
 		notespage.clickOnAddNoteIcon();
-		Thread.sleep(1000);
+		Thread.sleep(1000);  //remove and add explicit wait
 		String Title="Title"+FakerUtility.randomNumberGenerator()+"Test";
 		String Description="Des"+FakerUtility.randomNumberGenerator()+"Test";
 		notespage.addNewNote(Title, Description);
 		notespage.waitForInvisibilityOfaddnotemodal();
 		notespage.searchNote(Title);
-		AssertJUnit.assertEquals(notespage.cellvalueFind(), true);  //search is not working
+		Assert.assertEquals(notespage.cellvalueFind(), true);  //search is not working
 		//notespage.addNewNote("Title one", "Test Description");
 		}
 	

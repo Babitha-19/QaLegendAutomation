@@ -47,13 +47,13 @@ import automationcore.BaseClass;
 		Thread.sleep(1000);
 		String title=prop.getProperty("title");
 		ticketpage.addTicketDetails(title,prop.getProperty("Description") );
-		ticketpage.addClient("123");
+		ticketpage.addClient("123"); // change to property file
 		ticketpage.waitForInvisibilityOfAddTicketModal();
 		ticketpage.searchitem(title);
 		Assert.assertEquals(ticketpage.cellvalueFind(), true);	
 }
 	
-		@Test
+		@Test    //add priority, group, retry analyzer
 		public void deleteTicket() throws InterruptedException {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnTicketsMenu();

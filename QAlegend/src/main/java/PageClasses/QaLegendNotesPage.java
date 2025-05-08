@@ -40,8 +40,9 @@ public class QaLegendNotesPage {
 
 	
 	
-	public void clickOnAddNoteIcon() {
+	public QaLegendNotesPage clickOnAddNoteIcon() {
 		PageUtilities.clickOnAnElement(addnewnote);
+		return this;
 	}
 	
 	public void addNewNote(String Title, String Description) {

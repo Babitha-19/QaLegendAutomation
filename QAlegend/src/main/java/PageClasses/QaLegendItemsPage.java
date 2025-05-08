@@ -39,16 +39,17 @@ public class QaLegendItemsPage {
 		PageFactory.initElements(driver, this);
 	}	
 	
-	public void clickOnAddItem() {
+	public QaLegendItemsPage clickOnAddItem() {
 		PageUtilities.clickOnAnElement(additem);
+		return this; 
 		
 	}
 	
-	public void addNewItem(String titlefield, String ratefield) {
+	public QaLegendItemsPage addNewItem(String titlefield, String ratefield) {
 		PageUtilities.enterText(addtitle, ratefield);
 		PageUtilities.enterText(addrate, ratefield);
 		PageUtilities.clickOnAnElement(savebutton);
-		
+		return this;   //chaining
 	}
 	
 	public void searchitem(String titlefield) {

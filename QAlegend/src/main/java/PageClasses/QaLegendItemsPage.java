@@ -56,8 +56,8 @@ public class QaLegendItemsPage {
 		PageUtilities.enterText(searchitem, titlefield);		
 	}
 	
-	public boolean cellvalueFind() {
-		return(cellfind.isDisplayed());		
+	public String cellvalueFind() {
+		return(cellfind.getText());		
 	}
 
 	public void waitForInvisibilityOfAddItemModal() {

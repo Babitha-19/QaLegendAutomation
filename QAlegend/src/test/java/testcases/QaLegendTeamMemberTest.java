@@ -134,15 +134,14 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		itemspage.clickOnAddItem();  
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		String titlefield="item"+FakerUtility.randomNumberGenerator()+"test";
-		WebDriverWait wait1=new WebDriverWait(driver, Duration.ofSeconds(10));
 		String ratefield="rate"+FakerUtility.randomNumberGenerator();
 		itemspage.addNewItem(titlefield,ratefield);
 		itemspage.waitForInvisibilityOfAddItemModal();
 		itemspage.searchitem(titlefield);
-		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		itemspage.deleteItem();
+		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		itemspage.searchitem(titlefield);
-		Assert.assertEquals(itemspage.cellvalueFind(), true);		
+		Assert.assertEquals(itemspage.cellvalueFind(), "The record has been deleted.");		
 	  	}
 		}
 	

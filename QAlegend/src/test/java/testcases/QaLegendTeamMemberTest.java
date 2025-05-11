@@ -139,6 +139,7 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		itemspage.addNewItem(titlefield,ratefield);
 		itemspage.waitForInvisibilityOfAddItemModal();
 		itemspage.searchitem(titlefield);
+		WebDriverWait wait2 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		itemspage.deleteItem();
 		itemspage.searchitem(titlefield);
 		Assert.assertEquals(itemspage.cellvalueFind(), true);		

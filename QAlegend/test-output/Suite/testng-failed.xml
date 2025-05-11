@@ -6,29 +6,14 @@
   </listeners>
   <test thread-count="5" name="Test(failed)">
     <parameter name="browsername" value="chrome"/>
-    <groups>
-      <run>
-        <include name="Regression"/>
-        <include name="Smoke"/>
-      </run>
-    </groups>
     <classes>
       <class name="testcases.QaLegendTeamMemberTest">
         <methods>
-          <include name="addItems"/>
           <include name="deleteItem"/>
-          <include name="addNewNote"/>
-          <include name="deleteTeamMember"/>
-          <include name="addTeamMember"/>
+          <include name="initialisation"/>
+          <include name="afterMethod"/>
         </methods>
       </class> <!-- testcases.QaLegendTeamMemberTest -->
-      <class name="testcases.QaLegendTicketTest">
-        <methods>
-          <include name="addTicket"/>
-          <include name="deleteTicket"/>
-          <include name="editTicket"/>
-        </methods>
-      </class> <!-- testcases.QaLegendTicketTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->

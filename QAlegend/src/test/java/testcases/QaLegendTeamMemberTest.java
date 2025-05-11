@@ -127,7 +127,7 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		}
 
 
-	  	@Test(retryAnalyzer = RetryAnalyzer.class, priority=5, groups= {"Smoke"})
+	  	@Test
 		public void deleteItem() throws InterruptedException {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  
 		homepage.clickOnItemsMenu();
@@ -139,7 +139,7 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		itemspage.addNewItem(titlefield,ratefield);
 		itemspage.waitForInvisibilityOfAddItemModal();
 		itemspage.searchitem(titlefield);
-		itemspage.deletItem();
+		itemspage.deleteItem();
 		itemspage.searchitem(titlefield);
 		Assert.assertEquals(itemspage.cellvalueFind(), true);		
 	  	}

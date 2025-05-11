@@ -41,8 +41,6 @@ WebElement deleteicon;
 WebElement deletebutton;
 @FindBy(xpath="(//div[@class='modal-content'])[1]")
 WebElement addnotemodal;
-@FindBy(xpath="//button[contains(@class,'close'")
-WebElement vanishingpopup;
 
 
 public QaLegendTeamMemberPage(WebDriver driver) {
@@ -96,7 +94,6 @@ public void clickOnDelete() {
 public void deleteConfirmationPopup() {
 	
 	PageUtilities.clickOnAnElement(deletebutton);
-	//PageUtilities.clickOnAnElement(vanishingpopup);
 
 	
 	
@@ -105,13 +102,11 @@ public void deleteConfirmationPopup() {
 }
 public String confirmDelete() {
 	
-	//return(deleteicon.isDisplayed());
 	return(teammembercellvalue.getText());
 
 }
 
 public void waitForInvisibilityOfaddnotemodal() {
-	// TODO Auto-generated method stub
 	WaitUtility.waitForInvisibilityOfAnElement(driver, addnotemodal);
 }
 

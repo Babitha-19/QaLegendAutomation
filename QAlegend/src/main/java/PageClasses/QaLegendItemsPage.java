@@ -65,7 +65,7 @@ public class QaLegendItemsPage {
 		WaitUtility.waitForInvisibilityOfAnElement(driver, additemmodal);
 	}
 	
-	public void deletItem() {
+	public void deleteItem() {
 		PageUtilities.clickOnAnElement(deleteicon);
 	}
 

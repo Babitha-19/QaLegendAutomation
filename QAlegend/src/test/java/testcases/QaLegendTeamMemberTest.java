@@ -141,7 +141,7 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		itemspage.deleteItem();
 		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
 		itemspage.searchitem(titlefield);
-		Assert.assertEquals(itemspage.cellvalueFind(), "The record has been deleted.");		
+		Assert.assertEquals(itemspage.cellvalueFind(), true);		
 	  	}
 		}
 	

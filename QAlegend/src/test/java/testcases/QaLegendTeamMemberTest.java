@@ -116,9 +116,9 @@ public class QaLegendTeamMemberTest extends BaseClass {
 	  	loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnItemsMenu();
 		itemspage.clickOnAddItem();  	
-		Thread.sleep(1000);
-		String titlefield="item"+FakerUtility.randomNumberGenerator()+"test";
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		String titlefield="item"+FakerUtility.randomNumberGenerator()+"test";
+		WebDriverWait wait1=new WebDriverWait(driver, Duration.ofSeconds(10));
 		String ratefield="rate"+FakerUtility.randomNumberGenerator();
 		itemspage.addNewItem(titlefield,ratefield);
 		itemspage.waitForInvisibilityOfAddItemModal();

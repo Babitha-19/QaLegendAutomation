@@ -10,7 +10,6 @@
       <class name="testcases.QaLegendTeamMemberTest">
         <methods>
           <include name="initialisation"/>
-          <include name="deleteItem"/>
           <include name="afterMethod"/>
           <include name="deleteTeamMember"/>
         </methods>

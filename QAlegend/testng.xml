@@ -5,6 +5,12 @@
 <listener class-name="testcases.Listners"></listener>
 </listeners>
 <test thread-count="5" name="Test">
+<groups>
+<run>
+<include name="Regression"></include>
+<include name="Smoke"></include>
+
+</run></groups>
 <parameter name="browsername" value="chrome"></parameter>   
 <classes>
 	<class name="testcases.QaLegendTeamMemberTest">    
@@ -26,5 +32,5 @@
 	  </class>
      
 </classes>
-</test> <!-- Test -->
-</suite> <!-- Suite -->
+</test> 
+</suite> 

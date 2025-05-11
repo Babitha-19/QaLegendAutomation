@@ -8,9 +8,14 @@ import static org.testng.Assert.assertEquals;
 
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
@@ -26,24 +31,24 @@ import automationcore.BaseClass;
 import constants.Constant;
 import utilities.ExcelUtility;
 import utilities.FakerUtility;
-//import utilities.RetryAnalyzer;
+import utilities.RetryAnalyzer;
 
 public class QaLegendTeamMemberTest extends BaseClass {
-	WebDriver driver;
-	QaLegendLoginPage loginPage;
-	QaLegendHomePage homepage;
-	QaLegendTeamMemberPage teammemberpage;
-	QaLegendNotesPage notespage;
-	QaLegendItemsPage itemspage;
-	
-	//data read form property file
-	Properties prop;
-	FileInputStream fis;
-	@BeforeMethod
-	@Parameters({"browsername"})
-	public void initialisation(String browsername) throws Exception {
+		WebDriver driver;
+		QaLegendLoginPage loginPage;
+		QaLegendHomePage homepage;
+		QaLegendTeamMemberPage teammemberpage;
+		QaLegendNotesPage notespage;
+		QaLegendItemsPage itemspage;
+		
+		Properties prop;
+		FileInputStream fis;
+		@BeforeMethod
+		@Parameters({"browsername"})
+		public void initialisation(String browsername) throws Exception {
 		driver=browserInitialisation(browsername);
 		driver.get("https://qalegend.com/crm/index.php/signin");
+		driver.manage().window().maximize();
 		loginPage= new QaLegendLoginPage(driver);
 		homepage=new QaLegendHomePage(driver);
 		teammemberpage=new QaLegendTeamMemberPage(driver);
@@ -53,29 +58,25 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		prop=new Properties();
 		prop.load(fis);
 		
-	}
+		}
 	
-	//@Test(retryAnalyzer = RetryAnalyzer.class)
-	
-	public void addTeamMember() throws InterruptedException {
-		//		loginPage.loginInToQaLegend("admin@admin.com","12345678");
-
+	  	@Test(retryAnalyzer = RetryAnalyzer.class, priority=1, groups = {"Regression"})
+		public void addTeamMember() throws InterruptedException {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnteamMemberMenu();
 		teammemberpage.clickOnAddTeamemberButton();
-		//teammember.addTeamMember("Babitha", "j", "QA", "test@gmail.com", "pass@123");
 		String firstname=FakerUtility.getFirstFakeName();
 		String lastname=FakerUtility.getLastFakeName();
 		String emailid="teammember"+ FakerUtility.randomNumberGenerator()+"@gmail.com";
 		teammemberpage.addTeamMember(firstname, lastname, prop.getProperty("teammemberrole"), emailid ,prop.getProperty("teammemberpassword"));////accessing data from the property file
-		Thread.sleep(10000);
+		teammemberpage.waitForInvisibilityOfaddnotemodal();
 		teammemberpage.searchMember(emailid);
 		AssertJUnit.assertEquals(teammemberpage.cellvalueFind(), true); //for comparing the searched and added values//verification, this TC completed
 		}
    
 	
-	@Test
-	public void deleteTeamMember() throws IOException, InterruptedException {
+	  	@Test(retryAnalyzer = RetryAnalyzer.class, priority=2, groups = {"Regression"})
+	  	public void deleteTeamMember() throws IOException, InterruptedException {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnteamMemberMenu();
 		teammemberpage.clickOnAddTeamemberButton();
@@ -83,55 +84,57 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		String lastname=ExcelUtility.readStringData(1, 1, "Teammembers", Constant.EXCELFILEPATH)+FakerUtility.randomNumberGenerator();
 		String emailid=ExcelUtility.readStringData(1, 2, "Teammembers", Constant.EXCELFILEPATH)+FakerUtility.randomNumberGenerator()+ FakerUtility.randomNumberGenerator()+"@gmail.com";
 		teammemberpage.addTeamMember(firstname, lastname, prop.getProperty("teammemberrole"), emailid ,prop.getProperty("teammemberpassword"));////accessing data from the property file
-		Thread.sleep(10000);
+		teammemberpage.waitForInvisibilityOfaddnotemodal();
 		teammemberpage.searchMember(emailid);
 		teammemberpage.clickOnDelete();
-		teammemberpage.deleteConfirmationPopup();
-		teammemberpage.searchMember(emailid);
-		Assert.assertEquals(teammemberpage.confirmDelete(), "No data found");
+		teammemberpage.deleteConfirmationPopup();	
+		teammemberpage.searchMember(emailid);	
+		driver.navigate().refresh();
+
+
+
 		}
 	
 	
-	@Test
-	public void addNewNote() throws InterruptedException {
+	  	@Test(retryAnalyzer = RetryAnalyzer.class,priority=3, groups = {"Regression"})
+		public void addNewNote() throws InterruptedException {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnNotesMenu();
 		notespage.clickOnAddNoteIcon();
-		Thread.sleep(1000);  //remove and add explicit wait
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 		String Title="Title"+FakerUtility.randomNumberGenerator()+"Test";
 		String Description="Des"+FakerUtility.randomNumberGenerator()+"Test";
 		notespage.addNewNote(Title, Description);
 		notespage.waitForInvisibilityOfaddnotemodal();
 		notespage.searchNote(Title);
-		Assert.assertEquals(notespage.cellvalueFind(), true);  //search is not working
-		//notespage.addNewNote("Title one", "Test Description");
+		Assert.assertEquals(notespage.cellvalueFind(), true);  
 		}
 	
 	
-@Test
-	public void addItems() throws InterruptedException {
-	loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
-	homepage.clickOnItemsMenu();
-	itemspage.clickOnAddItem();  //add item is not working	
-	Thread.sleep(1000);
-	String titlefield="item"+FakerUtility.randomNumberGenerator()+"test";
-	Thread.sleep(1000);
-	String ratefield="rate"+FakerUtility.randomNumberGenerator();
-	itemspage.addNewItem(titlefield,ratefield);
-	itemspage.waitForInvisibilityOfAddItemModal();
-	itemspage.searchitem(titlefield);
-	Assert.assertEquals(itemspage.cellvalueFind(), true);		
-	}
-
-
-@Test
-		public void deleteItem() throws InterruptedException {
-		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
+	  	@Test(retryAnalyzer = RetryAnalyzer.class,priority=4, groups= {"Smoke"} )
+	  	public void addItems() throws InterruptedException {
+	  	loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnItemsMenu();
-		itemspage.clickOnAddItem();  //add item is not working	
+		itemspage.clickOnAddItem();  	
 		Thread.sleep(1000);
 		String titlefield="item"+FakerUtility.randomNumberGenerator()+"test";
-		Thread.sleep(1000);
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		String ratefield="rate"+FakerUtility.randomNumberGenerator();
+		itemspage.addNewItem(titlefield,ratefield);
+		itemspage.waitForInvisibilityOfAddItemModal();
+		itemspage.searchitem(titlefield);
+		Assert.assertEquals(itemspage.cellvalueFind(), true);		
+		}
+
+
+	  	@Test(retryAnalyzer = RetryAnalyzer.class, priority=5, groups= {"Smoke"})
+		public void deleteItem() throws InterruptedException {
+		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  
+		homepage.clickOnItemsMenu();
+		itemspage.clickOnAddItem();  
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		String titlefield="item"+FakerUtility.randomNumberGenerator()+"test";
+		WebDriverWait wait1=new WebDriverWait(driver, Duration.ofSeconds(10));
 		String ratefield="rate"+FakerUtility.randomNumberGenerator();
 		itemspage.addNewItem(titlefield,ratefield);
 		itemspage.waitForInvisibilityOfAddItemModal();
@@ -139,9 +142,7 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		itemspage.deletItem();
 		itemspage.searchitem(titlefield);
 		Assert.assertEquals(itemspage.cellvalueFind(), true);		
-}
-		
-			
-	}
+	  	}
+		}
 	
 

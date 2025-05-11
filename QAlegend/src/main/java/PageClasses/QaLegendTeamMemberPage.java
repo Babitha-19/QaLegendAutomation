@@ -1,11 +1,17 @@
 package PageClasses;
 
+import java.time.Duration;
+
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.PageUtilities;
+import utilities.WaitUtility;
 
 public class QaLegendTeamMemberPage {
 WebDriver driver;
@@ -33,6 +39,10 @@ WebElement teammembercellvalue;
 WebElement deleteicon;
 @FindBy(id="confirmDeleteButton")
 WebElement deletebutton;
+@FindBy(xpath="(//div[@class='modal-content'])[1]")
+WebElement addnotemodal;
+@FindBy(xpath="//button[contains(@class,'close'")
+WebElement vanishingpopup;
 
 
 public QaLegendTeamMemberPage(WebDriver driver) {
@@ -44,10 +54,10 @@ public void addTeamMember(String firstname, String lastname, String jobtitle, St
 	PageUtilities.enterText(firstnamefield, firstname);
 	PageUtilities.enterText(lastnamefield, lastname);
 	PageUtilities.clickOnAnElement(nextbutton);
-	Thread.sleep(2000);
+	WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 	PageUtilities.enterText(jobtitlefield, jobtitle );
 	PageUtilities.clickOnAnElement(nextbutton);
-	Thread.sleep(2000);
+	WebDriverWait wait1=new WebDriverWait(driver, Duration.ofSeconds(10));
 	PageUtilities.enterText(emailfield, email);
 	PageUtilities.enterText(passwordfield, password);
 	PageUtilities.clickOnAnElement(savebutton);
@@ -56,9 +66,9 @@ public void addTeamMember(String firstname, String lastname, String jobtitle, St
 	
 }
 
-public void searchMember(String name) { //used to find whether the user was added or not
+public void searchMember(String email) { //used to find whether the user was added or not
+	PageUtilities.enterText(searchbox, email);
 	
-	PageUtilities.enterText(searchbox, name);
 }
 
 
@@ -84,14 +94,25 @@ public void clickOnDelete() {
 }
 
 public void deleteConfirmationPopup() {
+	
 	PageUtilities.clickOnAnElement(deletebutton);
+	//PageUtilities.clickOnAnElement(vanishingpopup);
+
+	
 	
 	
 	
 }
-public boolean confirmDelete() {
+public String confirmDelete() {
 	
-	return(deleteicon.isDisplayed());
+	//return(deleteicon.isDisplayed());
+	return(teammembercellvalue.getText());
+
+}
+
+public void waitForInvisibilityOfaddnotemodal() {
+	// TODO Auto-generated method stub
+	WaitUtility.waitForInvisibilityOfAnElement(driver, addnotemodal);
 }
 
 

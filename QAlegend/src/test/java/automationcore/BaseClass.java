@@ -39,11 +39,11 @@ public class BaseClass {
 			ScreenshotUtility sc=new ScreenshotUtility();
 			sc.captureFailureScreenshot(driver, itResult.getName()); //find failed tc
 		}
-		if(driver!=null) {
-			driver.quit();
-			
-		}
-		
+//		if(driver!=null) {
+//			driver.quit();
+//			
+//		}
+//		
 	}
 }
 	

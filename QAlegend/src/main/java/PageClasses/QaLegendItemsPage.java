@@ -27,7 +27,7 @@ public class QaLegendItemsPage {
 	WebElement searchitem;
 	@FindBy(xpath="//tr[@class='odd' or @class='even']")
 	WebElement cellfind;
-	@FindBy(xpath="//a[@class='delete']")
+	@FindBy(xpath="//a[@class,'delete']")
 	WebElement deleteicon;
 	@FindBy(xpath="(//div[@class='modal-content'])[1]")
 	WebElement additemmodal;

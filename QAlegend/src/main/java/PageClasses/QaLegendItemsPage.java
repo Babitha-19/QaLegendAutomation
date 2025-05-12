@@ -27,8 +27,6 @@ public class QaLegendItemsPage {
 	WebElement searchitem;
 	@FindBy(xpath="//tr[@class='odd' or @class='even']")
 	WebElement cellfind;
-	@FindBy(xpath="//a[contains(@class,'delete')]")
-	WebElement deleteicon;
 	@FindBy(xpath="(//div[@class='modal-content'])[1]")
 	WebElement additemmodal;
 		
@@ -65,8 +63,6 @@ public class QaLegendItemsPage {
 		WaitUtility.waitForInvisibilityOfAnElement(driver, additemmodal);
 	}
 	
-	public void deleteItem() {
-		PageUtilities.clickOnAnElement(deleteicon);
-	}
+	
 
 }

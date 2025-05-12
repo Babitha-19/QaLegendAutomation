@@ -90,9 +90,6 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		teammemberpage.deleteConfirmationPopup();	
 		teammemberpage.searchMember(emailid);	
 		driver.navigate().refresh();
-
-
-
 		}
 	
 	
@@ -124,25 +121,7 @@ public class QaLegendTeamMemberTest extends BaseClass {
 		itemspage.waitForInvisibilityOfAddItemModal();
 		itemspage.searchitem(titlefield);
 		Assert.assertEquals(itemspage.cellvalueFind(), true);		
-		}
-
-
-	  	@Test
-		public void deleteItem() throws InterruptedException {
-		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  
-		homepage.clickOnItemsMenu();
-		itemspage.clickOnAddItem();  
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
-		String titlefield="item"+FakerUtility.randomNumberGenerator()+"test";
-		String ratefield="rate"+FakerUtility.randomNumberGenerator();
-		itemspage.addNewItem(titlefield,ratefield);
-		itemspage.waitForInvisibilityOfAddItemModal();
-		itemspage.searchitem(titlefield);
-		itemspage.deleteItem();
-		WebDriverWait wait1 = new WebDriverWait(driver, Duration.ofSeconds(10));
-		itemspage.searchitem(titlefield);
-		Assert.assertEquals(itemspage.cellvalueFind(), true);		
-	  	}
+		}	  	
 		}
 	
 

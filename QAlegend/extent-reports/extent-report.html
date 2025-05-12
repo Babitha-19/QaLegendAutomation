@@ -56,7 +56,7 @@
           </li>
             <li class="m-r-10">
                 <a href="#">
-                    <span class="badge badge-primary">May 11, 2025 10:05:31 pm</span>
+                    <span class="badge badge-primary">May 12, 2025 07:45:42 am</span>
                 </a>
             </li>
         </ul>
@@ -72,15 +72,7 @@
           <span class="title">Tests</span>
         </a>
       </li>
-            <li class="nav-item dropdown" onclick="toggleView('exception-view')">
-        <a id="nav-ex" class="dropdown-toggle" href="exception.html">
-          <span class="icon-holder">
-            <i class="fa fa-bug"></i>
-          </span>
-          <span class="title">Exception</span>
-        </a>
-      </li>
-      <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+            <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
         <a id="nav-dashboard" class="dropdown-toggle" href="dashboard.html">
           <span class="icon-holder">
             <i class="fa fa-bar-chart"></i>
@@ -109,7 +101,7 @@
 					</a>
 					<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 						<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success pull-right"></span></a>
-						<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger pull-right"></span></a>
+						
 						
 						
 						
@@ -122,117 +114,7 @@
 		</div>
 		<div class="test-list-wrapper scrollable">
 			<ul class="test-list-item">
-				<li class="test-item"  status="fail" test-id="1"
-					author=""
-					tag=""
-					device="">
-					<div class="status-avatar fail-bg">
-						<i class="fa fa-times text-white"></i>
-					</div>
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">deleteItem</p>
-							<p class="duration text-sm">0h 0m 9s+101ms</p>
-							<span class="datetime">22:05:34 pm</span>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="detail-head">
-							<div class="p-v-10 d-inline-block">
-								<div class="info">
-									<h5 class="test-status text-fail">deleteItem</h5>
-									<span class='badge badge-success'>05.11.2025 22:05:34</span>
-									<span class='badge badge-danger'>05.11.2025 22:05:43</span>
-									<span class='badge badge-default'>0h 0m 9s+101ms</span>
-								</div>
-								<div class="m-t-10 m-l-5">
-									
-								</div>
-							</div>
-						</div>
-<div class="detail-body mt-4">                                              
-<table class="table table-sm">
-	<thead><tr>
-		<th class="status-col">Status</th>
-		<th class="timestamp-col">Timestamp</th>
-		<th class="details-col">Details</th>
-	</tr></thead>
-	<tbody>
-			<tr class="event-row">
-				<td><i class="fa fa-times text-fail"></i></td>
-				<td>10:05:43 pm</td>
-				<td>
-						Test Failed
-				</td>
-			</tr>
-			<tr class="event-row">
-				<td><i class="fa fa-times text-fail"></i></td>
-				<td>10:05:43 pm</td>
-				<td>
-						<textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//a[contains(@class,'delete')]"}
-  (Session info: chrome=136.0.7103.93)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.29.0', revision: '5fc1ec94cb'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '22.0.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [2c7edaf5ad9337d1388493a2cc0b4852, findElement {using=xpath, value=//a[contains(@class,'delete')]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.93, chrome: {chromedriverVersion: 136.0.7103.92 (cb81a4cc5087..., userDataDir: C:\Users\babit\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50222}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50222/devtoo..., se:cdpVersion: 136.0.7103.93, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
-	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:368)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:362)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy13.click(Unknown Source)
-	at utilities.PageUtilities.clickOnAnElement(PageUtilities.java:11)
-	at PageClasses.QaLegendItemsPage.deleteItem(QaLegendItemsPage.java:69)
-	at testcases.QaLegendTeamMemberTest.deleteItem(QaLegendTeamMemberTest.java:141)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:687)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:995)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:741)
-	at org.testng.TestRunner.run(TestRunner.java:616)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-</textarea>
-				</td>
-			</tr>
-	</tbody>
-</table>
-</div>
-					</div>
-				</li>
-				<li class="test-item"  status="pass" test-id="2"
+				<li class="test-item"  status="pass" test-id="1"
 					author=""
 					tag=""
 					device="">
@@ -242,8 +124,8 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					<div class="open-test">
 						<div class="test-detail">
 							<p class="name">addTeamMember</p>
-							<p class="duration text-sm">0h 0m 8s+812ms</p>
-							<span class="datetime">22:05:46 pm</span>
+							<p class="duration text-sm">0h 0m 8s+627ms</p>
+							<span class="datetime">07:45:47 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
@@ -251,9 +133,9 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
 									<h5 class="test-status text-pass">addTeamMember</h5>
-									<span class='badge badge-success'>05.11.2025 22:05:46</span>
-									<span class='badge badge-danger'>05.11.2025 22:05:55</span>
-									<span class='badge badge-default'>0h 0m 8s+812ms</span>
+									<span class='badge badge-success'>05.12.2025 07:45:47</span>
+									<span class='badge badge-danger'>05.12.2025 07:45:55</span>
+									<span class='badge badge-default'>0h 0m 8s+627ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -270,7 +152,55 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>10:05:55 pm</td>
+				<td>7:45:55 am</td>
+				<td>
+						Test Passed
+				</td>
+			</tr>
+	</tbody>
+</table>
+</div>
+					</div>
+				</li>
+				<li class="test-item"  status="pass" test-id="2"
+					author=""
+					tag=""
+					device="">
+					<div class="status-avatar pass-bg">
+						<i class="fa fa-check text-white"></i>
+					</div>
+					<div class="open-test">
+						<div class="test-detail">
+							<p class="name">deleteTeamMember</p>
+							<p class="duration text-sm">0h 0m 7s+397ms</p>
+							<span class="datetime">07:45:57 am</span>
+						</div>
+					</div>
+					<div class="test-contents d-none">
+						<div class="detail-head">
+							<div class="p-v-10 d-inline-block">
+								<div class="info">
+									<h5 class="test-status text-pass">deleteTeamMember</h5>
+									<span class='badge badge-success'>05.12.2025 07:45:57</span>
+									<span class='badge badge-danger'>05.12.2025 07:46:04</span>
+									<span class='badge badge-default'>0h 0m 7s+397ms</span>
+								</div>
+								<div class="m-t-10 m-l-5">
+									
+								</div>
+							</div>
+						</div>
+<div class="detail-body mt-4">                                              
+<table class="table table-sm">
+	<thead><tr>
+		<th class="status-col">Status</th>
+		<th class="timestamp-col">Timestamp</th>
+		<th class="details-col">Details</th>
+	</tr></thead>
+	<tbody>
+			<tr class="event-row">
+				<td><i class="fa fa-check text-pass"></i></td>
+				<td>7:46:04 am</td>
 				<td>
 						Test Passed
 				</td>
@@ -289,19 +219,19 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">deleteTeamMember</p>
-							<p class="duration text-sm">0h 0m 9s+983ms</p>
-							<span class="datetime">22:05:57 pm</span>
+							<p class="name">addNewNote</p>
+							<p class="duration text-sm">0h 0m 3s+539ms</p>
+							<span class="datetime">07:46:06 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">deleteTeamMember</h5>
-									<span class='badge badge-success'>05.11.2025 22:05:57</span>
-									<span class='badge badge-danger'>05.11.2025 22:06:07</span>
-									<span class='badge badge-default'>0h 0m 9s+983ms</span>
+									<h5 class="test-status text-pass">addNewNote</h5>
+									<span class='badge badge-success'>05.12.2025 07:46:06</span>
+									<span class='badge badge-danger'>05.12.2025 07:46:10</span>
+									<span class='badge badge-default'>0h 0m 3s+539ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -318,7 +248,7 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>10:06:07 pm</td>
+				<td>7:46:10 am</td>
 				<td>
 						Test Passed
 				</td>
@@ -337,19 +267,19 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">addNewNote</p>
-							<p class="duration text-sm">0h 0m 4s+967ms</p>
-							<span class="datetime">22:06:09 pm</span>
+							<p class="name">addItems</p>
+							<p class="duration text-sm">0h 0m 3s+517ms</p>
+							<span class="datetime">07:46:11 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">addNewNote</h5>
-									<span class='badge badge-success'>05.11.2025 22:06:09</span>
-									<span class='badge badge-danger'>05.11.2025 22:06:14</span>
-									<span class='badge badge-default'>0h 0m 4s+967ms</span>
+									<h5 class="test-status text-pass">addItems</h5>
+									<span class='badge badge-success'>05.12.2025 07:46:11</span>
+									<span class='badge badge-danger'>05.12.2025 07:46:15</span>
+									<span class='badge badge-default'>0h 0m 3s+517ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -366,7 +296,7 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>10:06:14 pm</td>
+				<td>7:46:15 am</td>
 				<td>
 						Test Passed
 				</td>
@@ -385,19 +315,19 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">addItems</p>
-							<p class="duration text-sm">0h 0m 5s+877ms</p>
-							<span class="datetime">22:06:17 pm</span>
+							<p class="name">addTicket</p>
+							<p class="duration text-sm">0h 0m 6s+412ms</p>
+							<span class="datetime">07:46:17 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">addItems</h5>
-									<span class='badge badge-success'>05.11.2025 22:06:17</span>
-									<span class='badge badge-danger'>05.11.2025 22:06:23</span>
-									<span class='badge badge-default'>0h 0m 5s+877ms</span>
+									<h5 class="test-status text-pass">addTicket</h5>
+									<span class='badge badge-success'>05.12.2025 07:46:17</span>
+									<span class='badge badge-danger'>05.12.2025 07:46:23</span>
+									<span class='badge badge-default'>0h 0m 6s+412ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -414,7 +344,7 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>10:06:23 pm</td>
+				<td>7:46:23 am</td>
 				<td>
 						Test Passed
 				</td>
@@ -433,19 +363,19 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">addTicket</p>
-							<p class="duration text-sm">0h 0m 6s+236ms</p>
-							<span class="datetime">22:06:25 pm</span>
+							<p class="name">deleteTicket</p>
+							<p class="duration text-sm">0h 0m 5s+990ms</p>
+							<span class="datetime">07:46:25 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
 						<div class="detail-head">
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
-									<h5 class="test-status text-pass">addTicket</h5>
-									<span class='badge badge-success'>05.11.2025 22:06:25</span>
-									<span class='badge badge-danger'>05.11.2025 22:06:31</span>
-									<span class='badge badge-default'>0h 0m 6s+236ms</span>
+									<h5 class="test-status text-pass">deleteTicket</h5>
+									<span class='badge badge-success'>05.12.2025 07:46:25</span>
+									<span class='badge badge-danger'>05.12.2025 07:46:31</span>
+									<span class='badge badge-default'>0h 0m 5s+990ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -462,7 +392,7 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>10:06:31 pm</td>
+				<td>7:46:31 am</td>
 				<td>
 						Test Passed
 				</td>
@@ -481,57 +411,9 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					</div>
 					<div class="open-test">
 						<div class="test-detail">
-							<p class="name">deleteTicket</p>
-							<p class="duration text-sm">0h 0m 8s+476ms</p>
-							<span class="datetime">22:06:34 pm</span>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="detail-head">
-							<div class="p-v-10 d-inline-block">
-								<div class="info">
-									<h5 class="test-status text-pass">deleteTicket</h5>
-									<span class='badge badge-success'>05.11.2025 22:06:34</span>
-									<span class='badge badge-danger'>05.11.2025 22:06:42</span>
-									<span class='badge badge-default'>0h 0m 8s+476ms</span>
-								</div>
-								<div class="m-t-10 m-l-5">
-									
-								</div>
-							</div>
-						</div>
-<div class="detail-body mt-4">                                              
-<table class="table table-sm">
-	<thead><tr>
-		<th class="status-col">Status</th>
-		<th class="timestamp-col">Timestamp</th>
-		<th class="details-col">Details</th>
-	</tr></thead>
-	<tbody>
-			<tr class="event-row">
-				<td><i class="fa fa-check text-pass"></i></td>
-				<td>10:06:42 pm</td>
-				<td>
-						Test Passed
-				</td>
-			</tr>
-	</tbody>
-</table>
-</div>
-					</div>
-				</li>
-				<li class="test-item"  status="pass" test-id="8"
-					author=""
-					tag=""
-					device="">
-					<div class="status-avatar pass-bg">
-						<i class="fa fa-check text-white"></i>
-					</div>
-					<div class="open-test">
-						<div class="test-detail">
 							<p class="name">editTicket</p>
-							<p class="duration text-sm">0h 0m 9s+365ms</p>
-							<span class="datetime">22:06:51 pm</span>
+							<p class="duration text-sm">0h 0m 9s+133ms</p>
+							<span class="datetime">07:46:33 am</span>
 						</div>
 					</div>
 					<div class="test-contents d-none">
@@ -539,9 +421,9 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 							<div class="p-v-10 d-inline-block">
 								<div class="info">
 									<h5 class="test-status text-pass">editTicket</h5>
-									<span class='badge badge-success'>05.11.2025 22:06:51</span>
-									<span class='badge badge-danger'>05.11.2025 22:07:00</span>
-									<span class='badge badge-default'>0h 0m 9s+365ms</span>
+									<span class='badge badge-success'>05.12.2025 07:46:33</span>
+									<span class='badge badge-danger'>05.12.2025 07:46:42</span>
+									<span class='badge badge-default'>0h 0m 9s+133ms</span>
 								</div>
 								<div class="m-t-10 m-l-5">
 									
@@ -558,7 +440,7 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 	<tbody>
 			<tr class="event-row">
 				<td><i class="fa fa-check text-pass"></i></td>
-				<td>10:07:00 pm</td>
+				<td>7:46:42 am</td>
 				<td>
 						Test Passed
 				</td>
@@ -566,78 +448,6 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 	</tbody>
 </table>
 </div>
-					</div>
-				</li>
-			</ul>
-		</div>
-	</div>
-	<div class="test-content scrollable">
-		<div class="test-content-tools">
-			<ul>
-				<li>
-					<a class="back-to-test" href="javascript:void(0)">
-					<i class="fa fa-arrow-left"></i>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="test-content-detail">
-			<div class="detail-body"></div>
-		</div>
-	</div>
-</div><div class="test-wrapper row exception-view attributes-view">
-	<div class="test-list">
-		<div class="test-list-tools">
-			<ul class="tools pull-left">
-				<li>
-					<a href="">
-					<span class="font-size-14">Exception</span>
-					</a>
-				</li>
-			</ul>
-			<ul class="tools text-right">
-				<li>
-					<a href="#">
-					<span class="badge badge-primary">1</span>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<div class="test-list-wrapper scrollable">
-			<ul class="test-list-item">
-				<li class="test-item">
-					<div class="open-test">
-						<div class="test-detail">
-							<p class="name">org.openqa.selenium.NoSuchElementException</p>
-							<p class="duration text-sm">1 tests</p>
-						</div>
-					</div>
-					<div class="test-contents d-none">
-						<div class="info">
-							<h4>org.openqa.selenium.NoSuchElementException</h4>
-						</div>
-						<table class='table table-sm mt-4'>
-							<thead>
-								<tr>
-									<th class="status-col">Status</th>
-									<th class="timestamp-col">Timestamp</th>
-									<th>TestName</th>
-								</tr>
-							</thead>
-							<tbody>
-								<tr>
-									<td>
-										<div class='status-avatar fail-bg'>
-											<i class="fa fa-times text-white"></i>
-										</div>
-									</td>
-									<td>22:05:34 pm</td>
-									<td class='linked' test-id='1'>
-										deleteItem
-									</td>
-								</tr>
-							</tbody>
-						</table>
 					</div>
 				</li>
 			</ul>
@@ -671,12 +481,12 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='87.5%'>
+					<div><small data-tooltip='100%'>
 						<b>7</b> tests passed
 						</small>
 					</div>
 					<div>
-						<small data-tooltip='12.5%'><b>1</b> tests failed, 
+						<small data-tooltip='0%'><b>0</b> tests failed, 
 						<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -694,9 +504,9 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					</div>
 				</div>
 				<div class="card-footer">
-					<div><small data-tooltip='77.778%'><b>7</b> events passed</small></div>
+					<div><small data-tooltip='100%'><b>7</b> events passed</small></div>
 					<div>
-						<small data-tooltip='22.222%'><b>2</b> events failed, 
+						<small data-tooltip='0%'><b>0</b> events failed, 
 						<b data-tooltip='0%'>0</b> others
 						</small>
 					</div>
@@ -711,10 +521,10 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Tests</h6>
-							<h2 class="font-size-28 font-weight-light mt-3">8</h2>
+							<h2 class="font-size-28 font-weight-light mt-3">7</h2>
 							<span class="text-semibold text-success font-size-15">
 							<i class="ti-arrow-up font-size-11"></i> 
-							<span>87.50%</span>
+							<span>100.00%</span>
 							</span>
 						</div>
 						<div class="align-self-end">
@@ -730,7 +540,7 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Start</h6>
-							<h4 class="font-weight-light mt-4">May 11, 2025 10:05:31 pm</h4>
+							<h4 class="font-weight-light mt-4">May 12, 2025 07:45:42 am</h4>
 							<span class="text-semibold text-success font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -746,7 +556,7 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 					<div class="media justify-content-between">
 						<div class="card-header">
 							<h6 class="card-title">Duration</h6>
-							<h4 class="font-weight-light mt-4">0h 1m 29s+422ms</h4>
+							<h4 class="font-weight-light mt-4">0h 1m 0s+552ms</h4>
 							<span class="text-semibold font-size-15">
 						</div>
 						<div class="align-self-end">
@@ -803,14 +613,14 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 </div>
 <script>
 	var statusGroup = {
-	    parentCount: 8,
+	    parentCount: 7,
 		passParent: 7,
-		failParent: 1,
+		failParent: 0,
 		fatalParent: 0,
 		errorParent: 0,
 		warningParent: 0,
 		skipParent: 0,
-		exceptionsParent: 1,
+		exceptionsParent: 0,
 		childCount: 0,
 		passChild: 0,
 		failChild: 0,
@@ -831,9 +641,9 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 		infoGrandChild: 0,
 		debugGrandChild: 0,
 		exceptionsGrandChild: 0,
-		eventsCount: 9,
+		eventsCount: 7,
 		passEvents: 7,
-		failEvents: 2,
+		failEvents: 0,
 		fatalEvents: 0,
 		errorEvents: 0,
 		warningEvents: 0,
@@ -845,7 +655,7 @@ Session ID: 2c7edaf5ad9337d1388493a2cc0b4852
 </script>
 <script>
 	var timeline = {
-	        "deleteItem":9.101,"addTeamMember":8.812,"deleteTeamMember":9.983,"addNewNote":4.967,"addItems":5.877,"addTicket":6.236,"deleteTicket":8.476,"editTicket":9.365
+	        "addTeamMember":8.627,"deleteTeamMember":7.397,"addNewNote":3.539,"addItems":3.517,"addTicket":6.412,"deleteTicket":5.99,"editTicket":9.133
 	};
 </script>
                 </div>

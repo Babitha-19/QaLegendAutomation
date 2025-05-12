@@ -41,7 +41,7 @@ import utilities.RetryAnalyzer;
 		}
 	
 	
-		@Test(retryAnalyzer = RetryAnalyzer.class,  groups = {"Regression"})
+		@Test(retryAnalyzer = RetryAnalyzer.class,priority=1, groups = {"Regression"})
 		public void addTicket() throws InterruptedException {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnTicketsMenu();
@@ -57,7 +57,7 @@ import utilities.RetryAnalyzer;
 		}
 		
 	
-		@Test(retryAnalyzer = RetryAnalyzer.class,  groups= {"Smoke"})    
+		@Test(retryAnalyzer = RetryAnalyzer.class,priority=2,  groups= {"Smoke"})    
 		public void deleteTicket() throws InterruptedException {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnTicketsMenu();
@@ -76,7 +76,7 @@ import utilities.RetryAnalyzer;
 		
 		
 		
-		@Test(retryAnalyzer = RetryAnalyzer.class,  groups = {"Regression"} )
+		@Test(retryAnalyzer = RetryAnalyzer.class, priority=3, groups = {"Regression"} )
 		public void editTicket() throws InterruptedException {
 		loginPage.loginInToQaLegend(prop.getProperty("username"),prop.getProperty("password"));  //accessing data from the property file
 		homepage.clickOnTicketsMenu();

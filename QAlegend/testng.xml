@@ -5,7 +5,6 @@
 <listener class-name="testcases.Listners"></listener>
 </listeners>
 <test thread-count="5" name="Test">
-
 <parameter name="browsername" value="chrome"></parameter>   
 <classes>
 	<class name="testcases.QaLegendTeamMemberTest">    
